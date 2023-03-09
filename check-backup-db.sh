@@ -10,8 +10,8 @@ case $? in
   0)
   echo 'thực hiện thành công'
    ;;
- *)
-   STATEMENTS
+  *)
+   echo 'không có kết quả'
    ;;
 esac
 
