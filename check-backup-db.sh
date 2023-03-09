@@ -19,7 +19,7 @@
 #    echo 'không có kết quả'
 #    ;;
 # esac
-ping -c 1 8.8.8.8 
+ping -c 1 76.345.67.74 
 
 echo $?
 
