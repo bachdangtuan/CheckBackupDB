@@ -14,6 +14,7 @@ case $? in
    alertTelegramSuccess
    ;;
   *)
+   alertTelegramError
    echo 'không có kết quả'
    ;;
 esac
