@@ -19,7 +19,7 @@
 #    echo 'không có kết quả'
 #    ;;
 # esac
-ping -c 1 76.145.67.74 
+ping -c 1 16.145.67.74 
 
 echo $?
 
