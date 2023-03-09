@@ -3,6 +3,8 @@
 # $? thực thi không thành công trả về mã thoát là 1, thực thi thành công mã thoát là 0
 grep "example" testfile.txt
 
+echo $?
+
 case $? in
   1)
    echo 'thực hiện không thành công'
