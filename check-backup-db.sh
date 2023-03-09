@@ -4,22 +4,7 @@
 # trả về số khác 0
 # 
 
-# grep "example" testfile.txt
-
-# echo $?
-
-# case $? in
-#   1)
-#    echo 'thực hiện không thành công'
-#    ;;
-#   0)
-#   echo 'thực hiện thành công'
-#    ;;
-#   *)
-#    echo 'không có kết quả'
-#    ;;
-# esac
-ping -c 1 16.145.67.74 
+ping -c 1 8.8.8.8 
 
 echo $?
 
