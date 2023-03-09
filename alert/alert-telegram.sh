@@ -12,7 +12,7 @@ hostname_server=$hostname
 
 
 ERROR="
-🚨[SWITCH-ERROR]🚨
+🚨[BACKUP-ERROR]🚨
 Server: ${hostname_server}
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup dữ liệu không thành công !
@@ -21,7 +21,7 @@ Nguyên nhân: Đang backup bị ngắt giữa chừng hoặc backup bị lỗi 
 "
 
 SUCCESS="
-✅[SWITCH-SUCCESS]✅
+✅[BACKUP-SUCCESS]✅
 Server: ${hostname_server}
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup thành công !
