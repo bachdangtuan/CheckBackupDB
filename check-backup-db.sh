@@ -3,8 +3,7 @@
 
 export DATE=`date +%Y_%m_%d_%H_%M`
 
-pg_dump -U postgres -d produce --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
-
+pg_dump -U postgres -d testbackup --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 case $? in
   1)
    echo 'thực hiện không thành công'
