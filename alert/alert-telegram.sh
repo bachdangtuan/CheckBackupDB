@@ -13,7 +13,7 @@ myip=$(hostname -I | awk '{print $1}')
 
 
 
-db=$db
+dbname=$db
 host_ip=$myip
 hostname_server=$hostname
 
@@ -21,7 +21,7 @@ hostname_server=$hostname
 ERROR="
 🚨[BACKUP-ERROR]🚨
 Server: ${hostname_server}
-Database: ${db}
+Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup dữ liệu không thành công !
 --------
