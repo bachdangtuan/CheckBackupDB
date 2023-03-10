@@ -3,9 +3,6 @@ source ./alert/alert-telegram.sh
 
 export DATE=`date +%Y_%m_%d_%H_%M`
 cd /root/pg_backup
-
-
-
 pg_dump -U postgres -d testbackup --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
 case $? in
