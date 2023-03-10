@@ -1,10 +1,8 @@
 #!bin/bash
 source ./alert/alert-telegram.sh
 
-echo ${DB_NAME}
+
 cd /root/pg_backup
-
-
 
 pg_dump -U postgres -d ${DB_NAME} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 

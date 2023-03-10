@@ -2,19 +2,10 @@
 
 source ./config.sh
 
-# TOKEN="6112203391:AAEuDTYX3KQRNuoLKuJ0NAtpRoamdHIQQkA"
-# CHAT_ID="-957135587"
-# # URL API post telegeram
-# URL="https://api.telegram.org/bot${TOKEN}/sendMessage"
-# export db=testbackup;
-
-
-hostname=$(hostname)
-myip=$(hostname -I | awk '{print $1}')
-
-
 
 dbname=$DB_NAME
+hostname=$(hostname)
+myip=$(hostname -I | awk '{print $1}')
 host_ip=$myip
 hostname_server=$hostname
 
@@ -26,7 +17,7 @@ Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup dữ liệu không thành công !
 --------
-Nguyên nhân: Đang backup bị ngắt giữa chừng hoặc backup bị lỗi vui lòng kiểm tra lại
+Nguyên nhân: Backup DB bị ngắt giữa chừng, nguyên nhân do lỗi databases hoặc kết nối bị ngắt, vui lòng kiểm tra lại
 "
 
 SUCCESS="
@@ -34,7 +25,7 @@ SUCCESS="
 Server: ${hostname_server}
 Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
-Nội dung: Backup thành công !
+Nội dung: Backup Dump thành công databases !
 "
 
 
@@ -52,7 +43,6 @@ curl -s -X POST $URL \
 -G -d chat_id=$CHAT_ID \
 --data-urlencode "text=$ERROR" \
 -d "parse_mode=HTML"
-
     echo "loi sai database"
     exit 0
 }
