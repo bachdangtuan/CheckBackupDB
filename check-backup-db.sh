@@ -11,7 +11,7 @@ pg_dump -U postgres -d testbackup --exclude-table-data=adempiere.ad_changelog -F
 
 case $? in
   1)
-   alertTelegramError($DB_NAME)
+   alertTelegramError
    ;;
   0)
    alertTelegramSuccess

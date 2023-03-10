@@ -39,7 +39,7 @@ curl -s -X POST $URL \
     exit 0
 }
 
-alertTelegramError(dbname){
+alertTelegramError{
     echo $dbname
 curl -s -X POST $URL \
 -G -d chat_id=$CHAT_ID \
