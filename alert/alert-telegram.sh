@@ -1,4 +1,6 @@
 #!bin/bash
+
+source ./config.sh
 # TOKEN="6112203391:AAEuDTYX3KQRNuoLKuJ0NAtpRoamdHIQQkA"
 # CHAT_ID="-957135587"
 # # URL API post telegeram
