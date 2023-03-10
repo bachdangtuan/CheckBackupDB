@@ -1,7 +1,7 @@
 #!bin/bash
 source ./alert/alert-telegram.sh
 
-export DB_NAME=`testbackup`
+export DB_NAME=testbackup
 export DATE=`date +%Y_%m_%d_%H_%M`
 cd /root/pg_backup
 
