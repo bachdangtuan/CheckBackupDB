@@ -5,7 +5,9 @@ cd /root/pg_backup
 
 export DATE=`date +%Y_%m_%d_%H_%M`;
 
-pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
+echo ${db}
+
+# pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
 case $? in
   1)
