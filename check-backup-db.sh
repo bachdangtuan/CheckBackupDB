@@ -1,14 +1,12 @@
 #!bin/bash
 source ./alert/alert-telegram.sh
-source ./config.sh
 
-echo ${db}
+echo ${DB_NAME}
 cd /root/pg_backup
 
-export DATE=`date +%Y_%m_%d_%H_%M`;
 
 
-pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
+pg_dump -U postgres -d ${DB_NAME} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
 case $? in
   1)

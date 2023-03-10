@@ -1,6 +1,7 @@
 #!bin/bash
 
 source ./config.sh
+
 # TOKEN="6112203391:AAEuDTYX3KQRNuoLKuJ0NAtpRoamdHIQQkA"
 # CHAT_ID="-957135587"
 # # URL API post telegeram
@@ -13,7 +14,7 @@ myip=$(hostname -I | awk '{print $1}')
 
 
 
-dbname=$db
+dbname=$DB_NAME
 host_ip=$myip
 hostname_server=$hostname
 
