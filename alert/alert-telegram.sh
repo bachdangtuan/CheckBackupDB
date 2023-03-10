@@ -40,7 +40,6 @@ curl -s -X POST $URL \
 }
 
 alertTelegramError(){
-    echo $dbname
 curl -s -X POST $URL \
 -G -d chat_id=$CHAT_ID \
 --data-urlencode "text=$ERROR" \
