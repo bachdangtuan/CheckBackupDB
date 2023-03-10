@@ -11,13 +11,12 @@ source ./config.sh
 hostname=$(hostname)
 myip=$(hostname -I | awk '{print $1}')
 
-echo ${db}
+
 
 dbname=$db
 host_ip=$myip
 hostname_server=$hostname
 
-echo ${dbname}
 
 ERROR="
 🚨[BACKUP-ERROR]🚨
@@ -32,7 +31,7 @@ Nguyên nhân: Đang backup bị ngắt giữa chừng hoặc backup bị lỗi 
 SUCCESS="
 ✅[BACKUP-SUCCESS]✅
 Server: ${hostname_server}
-Database: 
+Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup thành công !
 "
