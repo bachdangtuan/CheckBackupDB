@@ -1,11 +1,12 @@
 #!bin/bash
 source ./alert/alert-telegram.sh
+source ./config.sh
 
+echo ${db}
 cd /root/pg_backup
 
 export DATE=`date +%Y_%m_%d_%H_%M`;
 
-echo ${db}
 
 pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
