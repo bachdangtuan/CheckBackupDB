@@ -11,12 +11,13 @@ source ./config.sh
 hostname=$(hostname)
 myip=$(hostname -I | awk '{print $1}')
 
-
+echo ${db}
 
 dbname=$db
 host_ip=$myip
 hostname_server=$hostname
 
+echo ${dbname}
 
 ERROR="
 🚨[BACKUP-ERROR]🚨

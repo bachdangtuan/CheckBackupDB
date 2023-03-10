@@ -7,7 +7,7 @@ export DATE=`date +%Y_%m_%d_%H_%M`;
 
 echo ${db}
 
-# pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
+pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
 case $? in
   1)
