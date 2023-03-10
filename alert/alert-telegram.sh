@@ -8,7 +8,12 @@ source ./config.sh
 # export db=testbackup;
 
 
+hostname=$(hostname)
+myip=$(hostname -I | awk '{print $1}')
 
+
+
+db=$db
 host_ip=$myip
 hostname_server=$hostname
 
@@ -30,12 +35,6 @@ Database:
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup thành công !
 "
-
-
-checkInfoServer(){
-hostname=$(hostname)
-myip=$(hostname -I | awk '{print $1}')
-}
 
 
 alertTelegramSuccess(){

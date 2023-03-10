@@ -4,7 +4,6 @@ source ./alert/alert-telegram.sh
 cd /root/pg_backup
 
 export DATE=`date +%Y_%m_%d_%H_%M`;
-checkInfoServer
 
 pg_dump -U postgres -d ${db} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
