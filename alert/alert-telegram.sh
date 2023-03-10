@@ -1,11 +1,11 @@
 #!bin/bash
-TOKEN="6112203391:AAEuDTYX3KQRNuoLKuJ0NAtpRoamdHIQQkA"
-CHAT_ID="-957135587"
-# URL API post telegeram
-URL="https://api.telegram.org/bot${TOKEN}/sendMessage"
+# TOKEN="6112203391:AAEuDTYX3KQRNuoLKuJ0NAtpRoamdHIQQkA"
+# CHAT_ID="-957135587"
+# # URL API post telegeram
+# URL="https://api.telegram.org/bot${TOKEN}/sendMessage"
+# export db=testbackup;
 
-hostname=$(hostname)
-myip=$(hostname -I | awk '{print $1}')
+
 
 host_ip=$myip
 hostname_server=$hostname
@@ -14,6 +14,7 @@ hostname_server=$hostname
 ERROR="
 🚨[BACKUP-ERROR]🚨
 Server: ${hostname_server}
+Database: ${db}
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup dữ liệu không thành công !
 --------
@@ -23,11 +24,16 @@ Nguyên nhân: Đang backup bị ngắt giữa chừng hoặc backup bị lỗi 
 SUCCESS="
 ✅[BACKUP-SUCCESS]✅
 Server: ${hostname_server}
+Database: 
 Địa chỉ IP : ${host_ip} / 24
 Nội dung: Backup thành công !
 "
 
 
+checkInfoServer(){
+hostname=$(hostname)
+myip=$(hostname -I | awk '{print $1}')
+}
 
 
 alertTelegramSuccess(){
