@@ -7,7 +7,7 @@ cd /root/pg_backup
 DB_NAME=testbackup
 
 
-pg_dump -U postgres -d $DB_NAME --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
+pg_dump -U postgres -d testbackup --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 
 case $? in
   1)
