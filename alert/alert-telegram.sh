@@ -49,9 +49,9 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
 -H "Content-Type: application/json" \
 -d '{"ipServer": "'"$host_ip"'",
     "hostname": "'"$hostname_server"'",
-    "thoiGianBackup": "1h",
-    "pathBackUp": "/root/pg_backup",
-    "dungLuongFile": "20Gb"
+    "pathBackup": "/root/pg_backup",
+    "status": "backup",
+    "capacityFile": "20Gb"
     }'
 }
 
