@@ -6,7 +6,7 @@ hostname=$(hostname)
 myip=$(hostname -I | awk '{print $1}')
 host_ip=$myip
 hostname_server=$hostname
-# os_systems=$(cat /etc/*release | awk -F"=" '/PRETTY_NAME/ {print $2}')
+os_systems=$(cat /etc/*release | awk -F"=" '/PRETTY_NAME/ {print $2}')
 
 
 ERROR="
@@ -54,7 +54,7 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
 -d '{"ipServer": "'"$host_ip"'",
     "hostname": "'"$hostname_server"'",
     "osSystems": "'"$os_systems"'",
-    "nameDatabase": "test",
+    "nameDatabase": "'"$DB_NAME"'",
     "pathBackup": "/root/pg_backup",
     "status": "backup",
     "capacityFile": "'"$capacityFile"'"
