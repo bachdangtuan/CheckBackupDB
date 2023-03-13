@@ -8,7 +8,7 @@ hostname=$(hostname)
 myip=$(hostname -I | awk '{print $1}')
 host_ip=$myip
 hostname_server=$hostname
-
+capacityFile=$(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
 
 ERROR="
 🚨[BACKUP-ERROR]🚨
@@ -51,7 +51,7 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
     "hostname": "'"$hostname_server"'",
     "pathBackup": "/root/pg_backup",
     "status": "backup",
-    "capacityFile": "20Gb"
+    "capacityFile": "'"$capacityFile"'"
     }'
 }
 
