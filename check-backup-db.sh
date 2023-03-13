@@ -2,7 +2,10 @@
 source ./alert/alert-telegram.sh
 
 
-cd /root/pg_backup
+#cd /root/pg_backup
+
+cd ${PATH_DIR}
+
 
 pg_dump -U postgres -d ${DB_NAME} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
 

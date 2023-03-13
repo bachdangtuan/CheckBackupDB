@@ -6,3 +6,4 @@ CHAT_ID="-957135587"
 URL="https://api.telegram.org/bot${TOKEN}/sendMessage"
 DB_NAME="testbackup";
 export DATE=`date +%Y_%m_%d_%H_%M`;
+PATH_DIR=/root/pg_backup
