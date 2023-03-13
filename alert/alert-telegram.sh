@@ -8,7 +8,6 @@ hostname=$(hostname)
 myip=$(hostname -I | awk '{print $1}')
 host_ip=$myip
 hostname_server=$hostname
-capacityFile=$(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
 
 ERROR="
 🚨[BACKUP-ERROR]🚨
@@ -44,7 +43,11 @@ curl -s -X POST $URL \
 }
 
 
+
 sendServer(){
+capacityFile=$(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
+
+
 curl -X POST http://10.0.0.210:5000/api/databases/info \
 -H "Content-Type: application/json" \
 -d '{"ipServer": "'"$host_ip"'",
