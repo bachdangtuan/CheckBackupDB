@@ -13,7 +13,6 @@ Server: ${hostname_server}
 Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
 Tên Database: ${DB_NAME}
-Khối lượng: $(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
 Nội dung: Backup dữ liệu không thành công !
 --------
 Nguyên nhân: Backup DB bị ngắt giữa chừng, nguyên nhân do lỗi databases hoặc kết nối bị ngắt, vui lòng kiểm tra lại
@@ -25,7 +24,6 @@ Server: ${hostname_server}
 Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
 Tên Database: ${DB_NAME}
-Khối lượng: $(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
 Nội dung: Backup Dump thành công databases !
 "
 
