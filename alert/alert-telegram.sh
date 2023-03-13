@@ -12,6 +12,7 @@ ERROR="
 Server: ${hostname_server}
 Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
+Tên Database: ${DB_NAME}
 Khối lượng: $(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
 Nội dung: Backup dữ liệu không thành công !
 --------
@@ -23,6 +24,7 @@ SUCCESS="
 Server: ${hostname_server}
 Database: ${dbname}
 Địa chỉ IP : ${host_ip} / 24
+Tên Database: ${DB_NAME}
 Khối lượng: $(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
 Nội dung: Backup Dump thành công databases !
 "
@@ -51,6 +53,7 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
 -H "Content-Type: application/json" \
 -d '{"ipServer": "'"$host_ip"'",
     "hostname": "'"$hostname_server"'",
+    "nameDatabase": "'"$DB_NAME"'",
     "pathBackup": "/root/pg_backup",
     "status": "backup",
     "capacityFile": "'"$capacityFile"'"
