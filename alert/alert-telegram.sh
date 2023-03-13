@@ -34,8 +34,6 @@ curl -s -X POST $URL \
 -G -d chat_id=$CHAT_ID \
 --data-urlencode "text=$SUCCESS" \
 -d "parse_mode=HTML"
-    echo "alert telegram thanh cong"
-    exit 0
 }
 
 alertTelegramError(){
@@ -43,8 +41,6 @@ curl -s -X POST $URL \
 -G -d chat_id=$CHAT_ID \
 --data-urlencode "text=$ERROR" \
 -d "parse_mode=HTML"
-    echo "loi sai database"
-    exit 0
 }
 
 

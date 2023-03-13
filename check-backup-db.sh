@@ -10,14 +10,17 @@ case $? in
   1)
    alertTelegramError
    sendServer
+   exit 0
    ;;
   0)
    alertTelegramSuccess
    sendServer
+   exit 0
    ;;
   *)
    alertTelegramError
    sendServer
+   exit 0
    echo 'không có kết quả'
    ;;
 esac
