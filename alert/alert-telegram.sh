@@ -53,7 +53,7 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
 -H "Content-Type: application/json" \
 -d '{"ipServer": "'"$host_ip"'",
     "hostname": "'"$hostname_server"'",
-    "osSystems": "'"$os_systems"'",
+    "osSystems": "Ubuntu Test",
     "nameDatabase": "'"$DB_NAME"'",
     "pathBackup": "/root/pg_backup",
     "status": "backup",
