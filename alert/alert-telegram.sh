@@ -47,7 +47,7 @@ curl -s -X POST $URL \
 sendServer(){
 echo $os_systems
 
-capacityFile=$(du -sh dkth_produce_$DATE.dump | awk '{print $1}')
+capacityFile=$(du -sh ${dbname}_$DATE.dump | awk '{print $1}')
 
 curl -X POST http://10.0.0.210:5000/api/databases/info \
 -H "Content-Type: application/json" \
@@ -55,7 +55,7 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
     "hostname": "'"$hostname_server"'",
     "osSystems": "'"$os_systems"'",
     "nameDatabase": "'"$DB_NAME"'",
-    "pathBackup": "/root/pg_backup",
+    "pathBackup": "'"$PATH_DIR"'",
     "status": "backup",
     "capacityFile": "'"$capacityFile"'"
     }'
