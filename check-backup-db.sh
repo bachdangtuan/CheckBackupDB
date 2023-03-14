@@ -7,7 +7,7 @@ source ./alert/alert-telegram.sh
 cd ${PATH_DIR}
 
 
-pg_dump -U postgres -d ${DB_NAME} --exclude-table-data=adempiere.ad_changelog -Fc -f dkth_produce_${DATE}.dump -v
+pg_dump -U postgres -d ${DB_NAME} --exclude-table-data=adempiere.ad_changelog -Fc -f ${DB_NAME}_${DATE}.dump -v
 
 case $? in
   1)
