@@ -44,11 +44,8 @@ curl -s -X POST $URL \
 
 
 
-sendServer(){
-echo $os_systems
-
+sendSuccessServer(){
 capacityFile=$(du -sh ${dbname}_$DATE.dump | awk '{print $1}')
-
 curl -X POST http://10.0.0.210:5000/api/databases/info \
 -H "Content-Type: application/json" \
 -d '{"ipServer": "'"$host_ip"'",
@@ -61,4 +58,17 @@ curl -X POST http://10.0.0.210:5000/api/databases/info \
     }'
 }
 
+sendErrorServer(){
+capacityFile=$(du -sh ${dbname}_$DATE.dump | awk '{print $1}')
+curl -X POST http://10.0.0.210:5000/api/databases/info \
+-H "Content-Type: application/json" \
+-d '{"ipServer": "'"$host_ip"'",
+    "hostname": "'"$hostname_server"'",
+    "osSystems": "'"$os_systems"'",
+    "nameDatabase": "'"$DB_NAME"'",
+    "pathBackup": "'"$PATH_DIR"'",
+    "status": "error",
+    "capacityFile": "'"$capacityFile"'"
+    }'
+}
 

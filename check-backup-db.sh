@@ -12,17 +12,17 @@ pg_dump -U postgres -d ${DB_NAME} --exclude-table-data=adempiere.ad_changelog -F
 case $? in
   1)
    alertTelegramError
-   sendServer
+   sendErrorServer
    exit 0
    ;;
   0)
    alertTelegramSuccess
-   sendServer
+   sendSuccessServer
    exit 0
    ;;
   *)
    alertTelegramError
-   sendServer
+   sendErrorServer
    exit 0
    echo 'không có kết quả'
    ;;
